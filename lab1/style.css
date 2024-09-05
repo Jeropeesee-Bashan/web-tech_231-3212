@@ -8,6 +8,10 @@ a {
   color: black;
 }
 
+a:hover {
+  color: limegreen;
+}
+
 header, main {
   margin-left: 50px;
   margin-bottom: 30px;
