@@ -45,6 +45,6 @@ table {
   border-collapse: collapse;
 }
 
-th {
+th, td {
   padding: 5px;
 }
