@@ -12,10 +12,19 @@ a:hover {
   color: limegreen;
 }
 
+h1, h2 {
+  text-align: center;
+}
+
 header, main {
-  margin-left: 50px;
+  margin: auto;
   margin-bottom: 30px;
   width: 50%;
+}
+
+nav {
+  max-width: fit-content;
+  margin: auto;
 }
 
 nav a {
@@ -24,7 +33,8 @@ nav a {
 
 img {
   width: 80%;
-  height: 80%;
+  margin: auto;
+  display: block;
 }
 
 li {
@@ -46,6 +56,7 @@ table, th, td {
 }
 
 table {
+  margin: auto;
   border-collapse: collapse;
 }
 
