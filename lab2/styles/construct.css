@@ -67,15 +67,17 @@
 }
 
 @media screen and (max-width: 700px) {
-  .dish-menu {
-    grid-template-columns: 1fr 1fr;
+  .dish img {
+    width: 150px;
   }
 
   h1, h2 {
     text-align: center;
   }
+}
 
-  #about > img {
-    width: 500px;
+@media screen and (max-width: 1600px) {
+  .dish-menu {
+    grid-template-columns: 1fr 1fr;
   }
 }
