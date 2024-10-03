@@ -1,0 +1,81 @@
+.dish-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+  cursor: pointer;
+  border-radius: 35px;
+  padding: 30px 40px 30px 40px;
+}
+
+.dish img {
+  width: fit-content;
+  border-radius: 35px;
+  max-height: 250px;
+  margin: auto;
+}
+
+.dish button {
+  background-color: #fleee9;
+  margin-top: 15px;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  color: #111827;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  text-align: center;
+  border: 0;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dish > button:hover, .dish:hover button {
+  background-color: #ccc;
+}
+
+.dish > button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.dish:hover {
+  border: 2px solid limegreen;
+  transition: border 0.1s linear;
+}
+
+.dish-price {
+  font-size: 20pt;
+  margin-top: 12px;
+}
+
+.dish-name {
+  font-weight: bold;
+  font-size: 15pt;
+  margin-top: 18px;
+}
+
+.dish-amount {
+  color: gray;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .dish-menu {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  #about > img {
+    width: 500px;
+  }
+}
