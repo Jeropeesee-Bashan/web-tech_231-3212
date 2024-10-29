@@ -1,0 +1,148 @@
+.dish-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+  cursor: pointer;
+  border-radius: 35px;
+  padding: 30px 40px 30px 40px;
+}
+
+.dish img {
+  width: fit-content;
+  border-radius: 35px;
+  max-height: 250px;
+  margin: auto;
+}
+
+.dish button {
+  background-color: #fleee9;
+  margin-top: 15px;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  color: #111827;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  text-align: center;
+  border: 0;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dish > button:hover, .dish:hover button {
+  background-color: #ccc;
+}
+
+.dish > button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.dish:hover {
+  border: 2px solid #00a000;
+  transition: border 0.1s linear;
+}
+
+.dish-price {
+  font-size: 20pt;
+  margin-top: 12px;
+}
+
+.dish-name {
+  font-weight: bold;
+  font-size: 15pt;
+  margin-top: 18px;
+}
+
+.dish-amount {
+  color: gray;
+  margin-top: 10px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+label, small {
+  display: block;
+}
+
+select, input {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+input[type="checkbox"],
+input[type="radio"],
+input[type="time"] {
+  accent-color: #00a000;
+}
+
+legend {
+  font-weight: bold;
+}
+
+.selection {
+  margin: 10px 0;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+legend {
+  margin-bottom: 12px;
+}
+
+fieldset button {
+  border: solid 1px black;
+  background-color: white;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 12px;
+}
+
+fieldset button:hover {
+  color: white;
+  background-color: #00a000;
+}
+
+.dish-order {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 700px) {
+  .dish img {
+    width: 150px;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .dish-menu {
+    grid-template-columns: 1fr 1fr;
+  }
+}
