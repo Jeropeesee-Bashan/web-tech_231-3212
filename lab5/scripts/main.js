@@ -41,12 +41,7 @@ function count_price() {
         if (categories[category].dish === null)
             continue;
 
-        const price = categories[category].dish.price;
-
-        if (typeof(price) !== "number")
-            continue;
-
-        result += price;
+        result += categories[category].dish.price;
     }
 
     return result;
@@ -112,7 +107,6 @@ function create_dish(dish) {
     const name = document.createElement("p");
     const amount = document.createElement("p");
     const add_button = document.createElement("button");
-    const symbol = typeof(dish.price) === "string" ? '' : ' ₽';
     const path = "images/" + dish.category + '/' + dish.keyword + ".jpg";
 
     result.setAttribute("class", "dish");
@@ -127,7 +121,7 @@ function create_dish(dish) {
 
     result.style["background-color"] = "white";
 
-    price.appendChild(document.createTextNode(dish.price + symbol));
+    price.appendChild(document.createTextNode(dish.price + ' ₽'));
     name.appendChild(document.createTextNode(dish.name));
     amount.appendChild(document.createTextNode(dish.count));
     add_button.appendChild(document.createTextNode("Добавить"));

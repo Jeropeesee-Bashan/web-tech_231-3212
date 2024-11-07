@@ -16,7 +16,7 @@ const dishes = [
     {
         keyword: "pelmeni",
         name: "Пельмени русские настоящие",
-        price: "Бесценно",
+        price: 350,
         category: "main",
         count: "250 г"
     },
