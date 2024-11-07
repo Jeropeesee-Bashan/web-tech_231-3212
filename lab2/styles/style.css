@@ -74,7 +74,7 @@ th, td {
 
 @media screen and (max-width: 600px) {
   #about > img {
-    width: 100%;
+    width: 80%;
   }
 
   h1 {
@@ -83,9 +83,16 @@ th, td {
 
   nav {
     flex-direction: column;
+    align-items: center;
   }
 
   nav a {
     font-size: 120%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  id {
+    text-size: 95%;
   }
 }
