@@ -284,7 +284,6 @@ for (const category in categories) {
 }
 
 for (const dish of dishes) {
-    console.log(dish);
     categories[dish.category].menu.appendChild(create_dish(dish));
 }
 
