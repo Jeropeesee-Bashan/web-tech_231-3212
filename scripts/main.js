@@ -218,6 +218,9 @@ function available_categories() {
 function form_warning_text() {
     const cats = available_categories();
 
+    if (!cats.length)
+        return "Ничего не выбрано. Выберите блюда для заказа.";
+
     if (cats.indexOf("salad") >= 0 && (cats.indexOf("soup") < 0 || cats.indexOf("main") < 0)) {
         return "Выберите суп или главное блюдо.";
     }
@@ -232,7 +235,7 @@ function form_warning_text() {
         return "Выберите главное блюдо.";
     }
 
-    return "Ничего не выбрано. Выберите блюда для заказа.";
+    return "";
 }
 
 function show_warning() {
