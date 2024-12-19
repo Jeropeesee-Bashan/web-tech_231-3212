@@ -16,7 +16,7 @@ const categories = {
         names: ["Суп", "Супы"],
         types: ["fish", "meat", "veg"]
     },
-    main: {
+    "main-course": {
         names: ["Главное блюдо", "Главные блюда"],
         types: ["fish", "meat", "veg"]
     },
@@ -24,7 +24,7 @@ const categories = {
         names: ["Напиток", "Напитки"],
         types: ["hot", "cold"]
     },
-    starter: {
+    salad: {
         names: ["Салат/Стартер", "Салаты/Стартеры"],
         types: ["fish", "meat", "veg"]
     },
@@ -107,7 +107,7 @@ function create_dish(dish) {
     const name = document.createElement("p");
     const amount = document.createElement("p");
     const add_button = document.createElement("button");
-    const path = "images/" + dish.category + '/' + dish.keyword + ".jpg";
+    const path = dish.image;
 
     result.setAttribute("class", "dish");
     result.setAttribute("data-dish", dish.keyword);
@@ -218,11 +218,11 @@ function available_categories() {
 function form_warning_text() {
     const cats = available_categories();
 
-    if (cats.indexOf("salad") >= 0 && (cats.indexOf("soup") < 0 || cats.indexOf("main") < 0)) {
+    if (cats.indexOf("salad") >= 0 && (cats.indexOf("soup") < 0 || cats.indexOf("main-course") < 0)) {
         return "Выберите суп или главное блюдо.";
     }
 
-    if (cats.indexOf("soup") >= 0 && (cats.indexOf("main") < 0 || cats.indexOf("salad") < 0)) {
+    if (cats.indexOf("soup") >= 0 && (cats.indexOf("main-course") < 0 || cats.indexOf("salad") < 0)) {
         return "Выберите главное блюдо/салат/стартер.";
     }
 
@@ -284,6 +284,7 @@ for (const category in categories) {
 }
 
 for (const dish of dishes) {
+    console.log(dish);
     categories[dish.category].menu.appendChild(create_dish(dish));
 }
 
