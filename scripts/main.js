@@ -24,7 +24,7 @@ const categories = {
         names: ["Напиток", "Напитки"],
         types: ["hot", "cold"]
     },
-    salad: {
+    starter: {
         names: ["Салат/Стартер", "Салаты/Стартеры"],
         types: ["fish", "meat", "veg"]
     },
@@ -221,11 +221,11 @@ function form_warning_text() {
     if (!cats.length)
         return "Ничего не выбрано. Выберите блюда для заказа.";
 
-    if (cats.indexOf("salad") >= 0 && (cats.indexOf("soup") < 0 || cats.indexOf("main") < 0)) {
+    if (cats.indexOf("starter") >= 0 && (cats.indexOf("soup") < 0 || cats.indexOf("main") < 0)) {
         return "Выберите суп или главное блюдо.";
     }
 
-    if (cats.indexOf("soup") >= 0 && (cats.indexOf("main") < 0 || cats.indexOf("salad") < 0)) {
+    if (cats.indexOf("soup") >= 0 && (cats.indexOf("main") < 0 || cats.indexOf("starter") < 0)) {
         return "Выберите главное блюдо/салат/стартер.";
     }
 
@@ -273,7 +273,7 @@ form.addEventListener("submit", event => {
     const cats = available_categories();
     console.log(cats);
 
-    if (cats.indexOf("drink") < 0 || (cats.indexOf("main") < 0 && cats.indexOf("salad") < 0)) {
+    if (cats.indexOf("drink") < 0 || (cats.indexOf("main") < 0 && cats.indexOf("starter") < 0)) {
         show_warning();
     } else {
         event.target.submit();
