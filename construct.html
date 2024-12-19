@@ -14,30 +14,110 @@
     <script type="module" src="scripts/main.js"></script>
 </head>
 <body>
-    <header>
-      <h1>Food Construct</h1>
-      <nav>
-        <a href="index.html#about">О нас</a>
-        <a href="construct.html" id="active">Собрать ланч</a>
-        <a>Заказы</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-    </header>
+  <header>
+    <h1>Food Construct</h1>
+    <nav>
+      <a href="index.html#about">О нас</a>
+      <a href="construct.html" id="active">Собрать ланч</a>
+      <a>Заказы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
 
-    <main>
-        <h2>Сделать заказ</h2>
-        <div id="dishes">
+  <main>
+    <h2>Доступные для заказа комбо</h2>
+    <div class="combo-list">
+      <div class="combo-option">
+        <div class="combo-dish">
+          <img src="images/combos/soup.png">
+          <p>Суп</p>
         </div>
-        <form class="dish-order" method="post" action="https://httpbin.org/post">
-          <fieldset>
-            <legend>Ваш заказ</legend>
+        <div class="combo-dish">
+          <img src="images/combos/main.png">
+          <p>Главное блюдо</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/salad.png">
+          <p>Салат</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/drink.png">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="combo-option">
+        <div class="combo-dish">
+          <img src="images/combos/soup.png">
+          <p>Суп</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/main.png">
+          <p>Главное блюдо</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/drink.png">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="combo-option">
+        <div class="combo-dish">
+          <img src="images/combos/soup.png">
+          <p>Суп</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/salad.png">
+          <p>Салат</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/drink.png">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="combo-option">
+        <div class="combo-dish">
+          <img src="images/combos/main.png">
+          <p>Главное блюдо</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/salad.png">
+          <p>Салат</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/drink.png">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="combo-option">
+        <div class="combo-dish">
+          <img src="images/combos/main.png">
+          <p>Главное блюдо</p>
+        </div>
+        <div class="combo-dish">
+          <img src="images/combos/drink.png">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="combo-option">
+        <div class="combo-dish">
+          <img src="images/combos/dessert.png">
+          <p>Десерт <br><i>(Можно добавить к любому виду заказа)</i></p>
+        </div>
+      </div>
+    </div>
 
-            <div id="dish-order-info">
-            </div>
+    <h2>Сделать заказ</h2>
+    <div id="dishes">
+    </div>
+    <form class="dish-order" method="post" action="https://httpbin.org/post">
+      <fieldset>
+        <legend>Ваш заказ</legend>
 
-            <label for="comment">Комментарий к заказу</label>
-            <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
-          </fieldset>
+        <div id="dish-order-info">
+        </div>
+
+        <label for="comment">Комментарий к заказу</label>
+        <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+      </fieldset>
 
           <fieldset>
             <legend>Ваши данные</legend>

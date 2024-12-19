@@ -204,9 +204,78 @@ function update_info(dish) {
     info_block.appendChild(overall);
 }
 
+function available_categories() {
+    let result = [];
+
+    for (const cat in categories) {
+        if (categories[cat].dish)
+            result.push(cat);
+    }
+
+    return result;
+}
+
+function form_warning_text() {
+    const cats = available_categories();
+
+    if (cats.indexOf("salad") >= 0 && (cats.indexOf("soup") < 0 || cats.indexOf("main") < 0)) {
+        return "Выберите суп или главное блюдо.";
+    }
+
+    if (cats.indexOf("soup") >= 0 && (cats.indexOf("main") < 0 || cats.indexOf("salad") < 0)) {
+        return "Выберите главное блюдо/салат/стартер.";
+    }
+
+    if (cats.indexOf("drink") < 0) {
+        return "Выберите напиток.";
+    } else {
+        return "Выберите главное блюдо.";
+    }
+
+    return "Ничего не выбрано. Выберите блюда для заказа.";
+}
+
+function show_warning() {
+    const main = document.querySelector("body");
+    const window = document.createElement("div");
+    const button = document.createElement("button");
+
+    let text = form_warning_text();
+
+    const para = document.createElement("p");
+    para.innerHTML = text;
+
+    button.type = "button";
+    button.innerHTML = "Окей 👌";
+
+    button.addEventListener("click", () => {
+        window.remove();
+    });
+
+    window.append(para);
+    window.append(button);
+
+    window.classList.add("warning-window");
+    main.prepend(window);
+}
+
 const main_block = document.getElementById("dishes");
 const info_block = document.getElementById("dish-order-info");
 const reset_button = document.getElementById("order-reset");
+const form = document.querySelector("form");
+
+form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const cats = available_categories();
+    console.log(cats);
+
+    if (cats.indexOf("drink") < 0 || (cats.indexOf("main") < 0 && cats.indexOf("salad") < 0)) {
+        show_warning();
+    } else {
+        event.target.submit();
+    }
+});
 
 reset_button.addEventListener("click", event => update_info(null));
 

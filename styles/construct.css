@@ -45,6 +45,20 @@
   outline-offset: 2px;
 }
 
+button {
+  border: solid 2px black;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 12px;
+}
+
+button:hover {
+  color: white;
+  background-color: #00a000;
+}
+
 .dish:hover {
   border-color: #00a000;
   transition: border 0.7s ease-out;
@@ -111,20 +125,6 @@ label {
 legend {
   margin-bottom: 12px;
 }
-
-fieldset button {
-  border: solid 1px black;
-  background-color: white;
-  cursor: pointer;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  padding: 12px;
-}
-
-fieldset button:hover {
-  color: white;
-  background-color: #00a000;
-}
-
 .dish-order {
   display: flex;
   flex-direction: row;
@@ -159,6 +159,60 @@ fieldset button:hover {
 
 .type-filter-chip-active {
   background-color: #00a0002f;
+}
+
+.combo-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.combo-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 16px;
+}
+
+.combo-dish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.combo-dish:hover img {
+  transform: scale(120%) translateY(-16px);
+}
+
+.combo-dish img {
+  height: 60%;
+  transition: transform 0.04s linear;
+}
+
+.combo-dish p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.warning-window {
+  position: fixed;
+  z-index: 1;
+  padding: 3rem;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 4px;
+}
+
+.warning-window > * {
+  display: block;
+  margin: 1.5rem auto;
 }
 
 @media screen and (max-width: 700px) {
