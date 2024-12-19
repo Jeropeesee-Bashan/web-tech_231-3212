@@ -24,7 +24,7 @@ const categories = {
         names: ["Напиток", "Напитки"],
         types: ["hot", "cold"]
     },
-    starter: {
+    salad: {
         names: ["Салат/Стартер", "Салаты/Стартеры"],
         types: ["fish", "meat", "veg"]
     },
